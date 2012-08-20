@@ -15,6 +15,9 @@
 		0D652D8015DE128D00BF7718 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D652D7E15DE128D00BF7718 /* MainMenu.xib */; };
 		0D76371415DF88E500412555 /* PHSMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371315DF88E500412555 /* PHSMenuController.m */; };
 		0D76371715DF895200412555 /* PHSStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371615DF895200412555 /* PHSStatusItemView.m */; };
+		0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D337915E210CA00B2ED62 /* PHSPanelController.m */; };
+		0D8D337D15E212E400B2ED62 /* PopupPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8D337C15E212E400B2ED62 /* PopupPanel.xib */; };
+		0D96FE0F15E2195100E47D51 /* PHSPanelBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96FE0E15E2195100E47D51 /* PHSPanelBackgroundView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,11 @@
 		0D76371315DF88E500412555 /* PHSMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSMenuController.m; sourceTree = "<group>"; };
 		0D76371515DF895200412555 /* PHSStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSStatusItemView.h; sourceTree = "<group>"; };
 		0D76371615DF895200412555 /* PHSStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSStatusItemView.m; sourceTree = "<group>"; };
+		0D8D337815E210CA00B2ED62 /* PHSPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPanelController.h; sourceTree = "<group>"; };
+		0D8D337915E210CA00B2ED62 /* PHSPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPanelController.m; sourceTree = "<group>"; };
+		0D8D337C15E212E400B2ED62 /* PopupPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupPanel.xib; sourceTree = "<group>"; };
+		0D96FE0D15E2195100E47D51 /* PHSPanelBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPanelBackgroundView.h; sourceTree = "<group>"; };
+		0D96FE0E15E2195100E47D51 /* PHSPanelBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPanelBackgroundView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,8 @@
 			children = (
 				0D76371515DF895200412555 /* PHSStatusItemView.h */,
 				0D76371615DF895200412555 /* PHSStatusItemView.m */,
+				0D96FE0D15E2195100E47D51 /* PHSPanelBackgroundView.h */,
+				0D96FE0E15E2195100E47D51 /* PHSPanelBackgroundView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -124,6 +134,9 @@
 			children = (
 				0D76371215DF88E500412555 /* PHSMenuController.h */,
 				0D76371315DF88E500412555 /* PHSMenuController.m */,
+				0D8D337815E210CA00B2ED62 /* PHSPanelController.h */,
+				0D8D337915E210CA00B2ED62 /* PHSPanelController.m */,
+				0D8D337C15E212E400B2ED62 /* PopupPanel.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +196,7 @@
 				0D652D7415DE128D00BF7718 /* InfoPlist.strings in Resources */,
 				0D652D7A15DE128D00BF7718 /* Credits.rtf in Resources */,
 				0D652D8015DE128D00BF7718 /* MainMenu.xib in Resources */,
+				0D8D337D15E212E400B2ED62 /* PopupPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +211,8 @@
 				0D652D7D15DE128D00BF7718 /* PHSAppDelegate.m in Sources */,
 				0D76371415DF88E500412555 /* PHSMenuController.m in Sources */,
 				0D76371715DF895200412555 /* PHSStatusItemView.m in Sources */,
+				0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */,
+				0D96FE0F15E2195100E47D51 /* PHSPanelBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

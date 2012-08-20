@@ -10,6 +10,22 @@
 
 @implementation PHSMenuController
 
+#pragma mark - Properties
+
+@synthesize panelController =_panelController;
+
+- (PHSPanelController *)panelController
+{
+    if (!_panelController) {
+        _panelController = [[PHSPanelController alloc] initWithWindowNibName:@"PopupPanel"];
+        _panelController.delegate = self;
+    }
+    
+    return _panelController;
+}
+
+#pragma mark - Lifecycle
+
 - (id)init
 {
     self = [super init];
@@ -31,7 +47,14 @@
 
 - (void)didSelectStatusItemView:(PHSStatusItemView *)statusItemView
 {
-    NSLog(@"didSelectStatusItemView");
+    [self.panelController openPanel];
+}
+
+#pragma mark - PHSPanelController delegate methods
+
+- (NSPoint)originPointForPanelController:(PHSPanelController *)panelController
+{
+    return NSMakePoint(100, 100);
 }
 
 @end

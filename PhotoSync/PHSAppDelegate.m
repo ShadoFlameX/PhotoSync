@@ -15,4 +15,10 @@
     self.menuController = [[PHSMenuController alloc] init];
 }
 
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
+{
+    self.menuController = nil;
+    return NSTerminateNow;
+}
+
 @end
