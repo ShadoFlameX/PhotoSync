@@ -18,7 +18,6 @@
 {
     [super awakeFromNib];
     
-    // Make a fully skinned panel
     NSPanel *panel = (id)[self window];
     [panel setAcceptsMouseMovedEvents:YES];
     [panel setLevel:NSPopUpMenuWindowLevel];
@@ -28,9 +27,11 @@
 
 #pragma mark - Actions
 
-- (IBAction)openPanel
+- (IBAction)openPanel:(id)sender
 {    
     NSPoint origin = [self.delegate originPointForPanelController:self];
+    origin.x -= floor(self.window.frame.size.width / 2.0f);
+    origin.y -= self.window.frame.size.height + 10.0f;
     NSRect rect = NSMakeRect(origin.x, origin.y, self.window.frame.size.width, self.window.frame.size.height);
     
     [NSApp activateIgnoringOtherApps:NO];
@@ -44,7 +45,7 @@
     } completionHandler:nil];
 }
 
-- (IBAction)closePanel
+- (IBAction)closePanel:(id)sender
 {
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.15f;

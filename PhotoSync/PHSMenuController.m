@@ -47,14 +47,16 @@
 
 - (void)didSelectStatusItemView:(PHSStatusItemView *)statusItemView
 {
-    [self.panelController openPanel];
+    [self.panelController openPanel:nil];
 }
 
 #pragma mark - PHSPanelController delegate methods
 
 - (NSPoint)originPointForPanelController:(PHSPanelController *)panelController
 {
-    return NSMakePoint(100, 100);
+    NSRect rect = [self.statusItemView.window convertRectToScreen:self.statusItemView.frame];
+    
+    return NSMakePoint(rect.origin.x + floor(rect.size.width/2.0f), rect.origin.y);
 }
 
 @end

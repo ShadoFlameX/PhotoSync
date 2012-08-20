@@ -18,7 +18,7 @@
 
 @property (nonatomic, weak) id <PHSPanelControllerDelegate> delegate;
 
-- (IBAction)openPanel;
-- (IBAction)closePanel;
+- (IBAction)openPanel:(id)sender;
+- (IBAction)closePanel:(id)sender;
 
 @end
