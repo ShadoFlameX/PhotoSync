@@ -47,7 +47,11 @@
 
 - (void)didSelectStatusItemView:(PHSStatusItemView *)statusItemView
 {
-    [self.panelController openPanel:nil];
+    if (self.panelController.window.isVisible) {
+        [self.panelController closePanel:nil];
+    } else {
+        [self.panelController openPanel:nil];
+    }
 }
 
 #pragma mark - PHSPanelController delegate methods
