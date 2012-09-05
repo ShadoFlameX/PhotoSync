@@ -15,6 +15,12 @@
     self.menuController = [[PHSMenuController alloc] init];
 }
 
+- (void)applicationWillResignActive:(NSNotification *)aNotification
+{
+    [self.menuController.panelController closePanel:nil];
+}
+
+
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     self.menuController = nil;

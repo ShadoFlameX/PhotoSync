@@ -26,8 +26,11 @@
 {
     [self.statusItem drawStatusBarBackgroundInRect:self.bounds withHighlight:self.statusItem.highlightMode];
     
-    [[NSColor redColor] set];
-    NSRectFill(NSInsetRect(self.bounds, 4.0f, 4.0f));
+    NSImage *icon = self.isHighlighted ? [NSImage imageNamed:@"icon"] : [NSImage imageNamed:@"icon"];
+    CGFloat iconX = round((NSWidth(self.bounds) - icon.size.width) / 2);
+    CGFloat iconY = round((NSHeight(self.bounds) - icon.size.height) / 2);
+    NSPoint iconPoint = NSMakePoint(iconX, iconY);
+    [icon drawAtPoint:iconPoint fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0f];
 }
 
 #pragma mark - Events

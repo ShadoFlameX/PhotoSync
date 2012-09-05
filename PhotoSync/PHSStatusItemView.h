@@ -18,5 +18,6 @@
 
 @property (nonatomic, weak) id <PHSStatusItemViewDelegate> delegate;
 @property (nonatomic,strong) NSStatusItem *statusItem;
+@property (nonatomic, getter = isHighlighted) BOOL highlighted;
 
 @end

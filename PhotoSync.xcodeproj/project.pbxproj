@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3F195C15E8885F008FFA0A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F195B15E8885F008FFA0A /* icon.png */; };
 		0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D652D6915DE128D00BF7718 /* Cocoa.framework */; };
 		0D652D7415DE128D00BF7718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D652D7215DE128D00BF7718 /* InfoPlist.strings */; };
 		0D652D7615DE128D00BF7718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D652D7515DE128D00BF7718 /* main.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D3F195B15E8885F008FFA0A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = "<group>"; };
 		0D652D6515DE128D00BF7718 /* PhotoSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D652D6915DE128D00BF7718 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0D652D6C15DE128D00BF7718 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3F195915E8883D008FFA0A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0D3F195B15E8885F008FFA0A /* icon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		0D652D5A15DE128D00BF7718 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		0D652D7015DE128D00BF7718 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0D3F195915E8883D008FFA0A /* Images */,
 				0D652D7115DE128D00BF7718 /* PhotoSync-Info.plist */,
 				0D652D7215DE128D00BF7718 /* InfoPlist.strings */,
 				0D652D7515DE128D00BF7718 /* main.m */,
@@ -197,6 +208,7 @@
 				0D652D7A15DE128D00BF7718 /* Credits.rtf in Resources */,
 				0D652D8015DE128D00BF7718 /* MainMenu.xib in Resources */,
 				0D8D337D15E212E400B2ED62 /* PopupPanel.xib in Resources */,
+				0D3F195C15E8885F008FFA0A /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,7 +28,7 @@
 #pragma mark - Actions
 
 - (IBAction)openPanel:(id)sender
-{    
+{
     NSPoint origin = [self.delegate originPointForPanelController:self];
     origin.x -= floor(self.window.frame.size.width / 2.0f);
     origin.y -= self.window.frame.size.height + 10.0f;
@@ -37,8 +37,10 @@
     [NSApp activateIgnoringOtherApps:NO];
     [self.window setAlphaValue:0.0f];
     [self.window setFrame:rect display:YES];
-    [self.window makeKeyAndOrderFront:nil];
-
+    [NSApp arrangeInFront:sender];
+    [self.window makeKeyAndOrderFront:self];
+    [NSApp activateIgnoringOtherApps:YES];
+    
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.15f;
         [[self.window animator] setAlphaValue:1.0f];
@@ -48,7 +50,7 @@
 - (IBAction)closePanel:(id)sender
 {
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-        context.duration = 0.15f;
+        context.duration = 0.2f;
         [[self.window animator] setAlphaValue:0.0f];
     } completionHandler:^{
         [self.window orderOut:nil];
@@ -56,3 +58,5 @@
 }
 
 @end
+
+
