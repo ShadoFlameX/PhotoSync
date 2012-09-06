@@ -8,6 +8,8 @@
 
 #import "PHSPhotoQuickView.h"
 
+static const CGFloat PHSPhotoQuickViewAnimationScale = 1.02f;
+
 @interface PHSPhotoQuickView ()
 @property (nonatomic, strong, readonly) TUIImageView *imageView;
 @end
@@ -45,10 +47,12 @@
         [TUIView animateWithDuration:0.35f animations:^{
             _imageView.image = image;
             _imageView.alpha = 1.0f;
+            _imageView.transform = CGAffineTransformIdentity;
         }];
     } else {
         [TUIView animateWithDuration:0.5f animations:^{
             _imageView.alpha = 0.0f;
+            _imageView.transform = CGAffineTransformMakeScale(PHSPhotoQuickViewAnimationScale, PHSPhotoQuickViewAnimationScale);
         } completion:^(BOOL finished) {
             _imageView.image = image;
             _imageView.hidden = YES;
@@ -69,6 +73,7 @@
         _imageView.backgroundColor = [NSColor blackColor];
         _imageView.contentMode = TUIViewContentModeScaleAspectFit;
         _imageView.alpha = 0.0f;
+        _imageView.transform = CGAffineTransformMakeScale(PHSPhotoQuickViewAnimationScale, PHSPhotoQuickViewAnimationScale);
         _imageView.hidden = YES;
         
         [self addSubview:_imageView];

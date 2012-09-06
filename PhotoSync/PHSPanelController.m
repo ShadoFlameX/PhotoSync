@@ -49,8 +49,8 @@
     
     _photoQuickView = [[PHSPhotoQuickView alloc] initWithFrame:CGRectMake(0.0f, 64.0f, _rootView.bounds.size.width, _rootView.bounds.size.height - 64.0f)];
     
-    [self.rootView addSubview:self.photoScrubber];
     [self.rootView addSubview:self.photoQuickView];
+    [self.rootView addSubview:self.photoScrubber];
 }
 
 #pragma mark - Actions
