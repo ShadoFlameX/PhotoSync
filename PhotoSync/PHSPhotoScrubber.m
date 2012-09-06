@@ -8,7 +8,15 @@
 
 #import "PHSPhotoScrubber.h"
 
+@interface PHSPhotoScrubber ()
+@property (nonatomic, strong) TUIImageView *backgroundView;
+@end
+
 @implementation PHSPhotoScrubber
+
+#pragma mark - Properties
+
+@synthesize backgroundView = _backgroundView;
 
 #pragma mark - Lifecycle
 
@@ -16,10 +24,31 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [NSColor blackColor];
+        self.backgroundColor = [NSColor colorWithCalibratedWhite:0.1f alpha:1.0f];
+        _backgroundView = [[TUIImageView alloc] initWithImage:[NSImage imageNamed:@"scrubber-background"]];
+        CGRect bgRect = _backgroundView.frame;
+        bgRect.origin.y = 0.0f;
+        _backgroundView.frame = bgRect; 
+        
+        _backgroundView.backgroundColor = [NSColor clearColor];
+        [self addSubview:_backgroundView];
     }
     
     return self;
+}
+
+- (void)mouseDragged:(NSEvent *)theEvent
+{
+    CGPoint point = [_backgroundView convertFromWindowPoint:[theEvent locationInWindow]];
+    if ([_backgroundView pointInside:point]) {
+        _index = (NSUInteger)point.x / 20;
+        [self sendActionsForControlEvents:TUIControlEventValueChanged];
+    }
+}
+
+- (void)mouseUp:(NSEvent *)event fromSubview:(TUIView *)subview
+{
+    [self sendActionsForControlEvents:TUIControlEventMouseUpInside];
 }
 
 @end

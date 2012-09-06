@@ -10,6 +10,7 @@
 #import <TwUI/TUIKit.h>
 
 @class PHSPhotoScrubber;
+@class PHSPhotoQuickView;
 
 @class PHSPanelController;
 @protocol PHSPanelControllerDelegate <NSObject>
@@ -22,6 +23,7 @@
 @property (nonatomic, weak) id <PHSPanelControllerDelegate> delegate;
 @property (nonatomic, strong) TUIView *rootView;
 @property (nonatomic, strong) PHSPhotoScrubber *photoScrubber;
+@property (nonatomic, strong) PHSPhotoQuickView *photoQuickView;
 
 - (IBAction)openPanel:(id)sender;
 - (IBAction)closePanel:(id)sender;

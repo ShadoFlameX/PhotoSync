@@ -21,6 +21,15 @@
 		0D7EBF6615F7591700C3B6B2 /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7EBF6515F7591700C3B6B2 /* TwUI.framework */; };
 		0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D337915E210CA00B2ED62 /* PHSPanelController.m */; };
 		0DDEF0D315F8932400B2040F /* PHSPopoverWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */; };
+		0DDEF0D915F8A4B200B2040F /* scrubber-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D815F8A4B200B2040F /* scrubber-background.png */; };
+		0DDEF0DC15F8A7FD00B2040F /* PHSPhotoQuickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEF0DB15F8A7FD00B2040F /* PHSPhotoQuickView.m */; };
+		0DDEF0E015F8AF3D00B2040F /* photo1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0DD15F8AF3D00B2040F /* photo1.jpg */; };
+		0DDEF0E115F8AF3D00B2040F /* photo2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0DE15F8AF3D00B2040F /* photo2.jpg */; };
+		0DDEF0E215F8AF3D00B2040F /* photo3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0DF15F8AF3D00B2040F /* photo3.jpg */; };
+		0DDEF0EC15F8B3F900B2040F /* photo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0E915F8B3F900B2040F /* photo4.jpg */; };
+		0DDEF0ED15F8B3F900B2040F /* photo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0EA15F8B3F900B2040F /* photo5.jpg */; };
+		0DDEF0EE15F8B3F900B2040F /* photo6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0EB15F8B3F900B2040F /* photo6.jpg */; };
+		0DDEF0F015F8BB1E00B2040F /* photo7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0EF15F8BB1E00B2040F /* photo7.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +59,16 @@
 		0D8D337915E210CA00B2ED62 /* PHSPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPanelController.m; sourceTree = "<group>"; };
 		0DDEF0D115F8932400B2040F /* PHSPopoverWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPopoverWindow.h; sourceTree = "<group>"; };
 		0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPopoverWindow.m; sourceTree = "<group>"; };
+		0DDEF0D815F8A4B200B2040F /* scrubber-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scrubber-background.png"; path = "Images/scrubber-background.png"; sourceTree = "<group>"; };
+		0DDEF0DA15F8A7FD00B2040F /* PHSPhotoQuickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPhotoQuickView.h; sourceTree = "<group>"; };
+		0DDEF0DB15F8A7FD00B2040F /* PHSPhotoQuickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPhotoQuickView.m; sourceTree = "<group>"; };
+		0DDEF0DD15F8AF3D00B2040F /* photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo1.jpg; path = Images/photo1.jpg; sourceTree = "<group>"; };
+		0DDEF0DE15F8AF3D00B2040F /* photo2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo2.jpg; path = Images/photo2.jpg; sourceTree = "<group>"; };
+		0DDEF0DF15F8AF3D00B2040F /* photo3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo3.jpg; path = Images/photo3.jpg; sourceTree = "<group>"; };
+		0DDEF0E915F8B3F900B2040F /* photo4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo4.jpg; path = Images/photo4.jpg; sourceTree = "<group>"; };
+		0DDEF0EA15F8B3F900B2040F /* photo5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo5.jpg; path = Images/photo5.jpg; sourceTree = "<group>"; };
+		0DDEF0EB15F8B3F900B2040F /* photo6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo6.jpg; path = Images/photo6.jpg; sourceTree = "<group>"; };
+		0DDEF0EF15F8BB1E00B2040F /* photo7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo7.jpg; path = Images/photo7.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +88,14 @@
 			isa = PBXGroup;
 			children = (
 				0D3F195B15E8885F008FFA0A /* icon.png */,
+				0DDEF0D815F8A4B200B2040F /* scrubber-background.png */,
+				0DDEF0DD15F8AF3D00B2040F /* photo1.jpg */,
+				0DDEF0DE15F8AF3D00B2040F /* photo2.jpg */,
+				0DDEF0DF15F8AF3D00B2040F /* photo3.jpg */,
+				0DDEF0E915F8B3F900B2040F /* photo4.jpg */,
+				0DDEF0EA15F8B3F900B2040F /* photo5.jpg */,
+				0DDEF0EB15F8B3F900B2040F /* photo6.jpg */,
+				0DDEF0EF15F8BB1E00B2040F /* photo7.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -145,6 +172,8 @@
 				0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */,
 				0DDEF0D115F8932400B2040F /* PHSPopoverWindow.h */,
 				0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */,
+				0DDEF0DA15F8A7FD00B2040F /* PHSPhotoQuickView.h */,
+				0DDEF0DB15F8A7FD00B2040F /* PHSPhotoQuickView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -218,6 +247,14 @@
 				0D652D8015DE128D00BF7718 /* MainMenu.xib in Resources */,
 				0D3F195C15E8885F008FFA0A /* icon.png in Resources */,
 				0D23954815F7672C007F3AAF /* PopupPanel.xib in Resources */,
+				0DDEF0D915F8A4B200B2040F /* scrubber-background.png in Resources */,
+				0DDEF0E015F8AF3D00B2040F /* photo1.jpg in Resources */,
+				0DDEF0E115F8AF3D00B2040F /* photo2.jpg in Resources */,
+				0DDEF0E215F8AF3D00B2040F /* photo3.jpg in Resources */,
+				0DDEF0EC15F8B3F900B2040F /* photo4.jpg in Resources */,
+				0DDEF0ED15F8B3F900B2040F /* photo5.jpg in Resources */,
+				0DDEF0EE15F8B3F900B2040F /* photo6.jpg in Resources */,
+				0DDEF0F015F8BB1E00B2040F /* photo7.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +272,7 @@
 				0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */,
 				0D104D0215F7495700B67EDA /* PHSPhotoScrubber.m in Sources */,
 				0DDEF0D315F8932400B2040F /* PHSPopoverWindow.m in Sources */,
+				0DDEF0DC15F8A7FD00B2040F /* PHSPhotoQuickView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
