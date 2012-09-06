@@ -17,10 +17,16 @@
 
 - (void)awakeFromNib
 {
-    TUINSView *bridgeView = self.window.contentView;
+    [self.window setOpaque:NO];
+    [self.window setBackgroundColor:[NSColor clearColor]];
+    
+    TUINSView *bridgeView = [[TUINSView alloc] initWithFrame:NSMakeRect(0.0f, 0.0f, self.window.frame.size.width, self.window.frame.size.height)];
+    [bridgeView tui_setOpaque:NO];
+    self.window.contentView = bridgeView;
     
     self.rootView = [[TUIView alloc] initWithFrame:bridgeView.bounds];
-    self.rootView.backgroundColor = [NSColor colorWithDeviceWhite:0.3f alpha:1.0f];
+    self.rootView.backgroundColor = [NSColor colorWithCalibratedWhite:0.2f alpha:1.0f];
+    self.rootView.layer.cornerRadius = 5.0f;
     
     bridgeView.rootView = self.rootView;
     
@@ -42,7 +48,7 @@
     [self.window setAlphaValue:0.0f];
     [self.window setFrame:rect display:YES];
     [NSApp arrangeInFront:sender];
-    [self.window makeKeyAndOrderFront:self];
+    [self.window orderFrontRegardless];
     [NSApp activateIgnoringOtherApps:YES];
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {

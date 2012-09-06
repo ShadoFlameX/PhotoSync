@@ -20,6 +20,7 @@
 		0D76371715DF895200412555 /* PHSStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371615DF895200412555 /* PHSStatusItemView.m */; };
 		0D7EBF6615F7591700C3B6B2 /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7EBF6515F7591700C3B6B2 /* TwUI.framework */; };
 		0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D337915E210CA00B2ED62 /* PHSPanelController.m */; };
+		0DDEF0D315F8932400B2040F /* PHSPopoverWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		0D7EBF6515F7591700C3B6B2 /* TwUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwUI.framework; path = Frameworks/TwUI/build/Release/TwUI.framework; sourceTree = "<group>"; };
 		0D8D337815E210CA00B2ED62 /* PHSPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPanelController.h; sourceTree = "<group>"; };
 		0D8D337915E210CA00B2ED62 /* PHSPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPanelController.m; sourceTree = "<group>"; };
+		0DDEF0D115F8932400B2040F /* PHSPopoverWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPopoverWindow.h; sourceTree = "<group>"; };
+		0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPopoverWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				0D76371615DF895200412555 /* PHSStatusItemView.m */,
 				0D104D0015F7495700B67EDA /* PHSPhotoScrubber.h */,
 				0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */,
+				0DDEF0D115F8932400B2040F /* PHSPopoverWindow.h */,
+				0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				0D76371715DF895200412555 /* PHSStatusItemView.m in Sources */,
 				0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */,
 				0D104D0215F7495700B67EDA /* PHSPhotoScrubber.m in Sources */,
+				0DDEF0D315F8932400B2040F /* PHSPopoverWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
