@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D104D0215F7495700B67EDA /* PHSPhotoScrubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */; };
+		0D23954815F7672C007F3AAF /* PopupPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D23954715F7672C007F3AAF /* PopupPanel.xib */; };
 		0D3F195C15E8885F008FFA0A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F195B15E8885F008FFA0A /* icon.png */; };
 		0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D652D6915DE128D00BF7718 /* Cocoa.framework */; };
 		0D652D7415DE128D00BF7718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D652D7215DE128D00BF7718 /* InfoPlist.strings */; };
@@ -16,12 +18,14 @@
 		0D652D8015DE128D00BF7718 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D652D7E15DE128D00BF7718 /* MainMenu.xib */; };
 		0D76371415DF88E500412555 /* PHSMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371315DF88E500412555 /* PHSMenuController.m */; };
 		0D76371715DF895200412555 /* PHSStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371615DF895200412555 /* PHSStatusItemView.m */; };
+		0D7EBF6615F7591700C3B6B2 /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7EBF6515F7591700C3B6B2 /* TwUI.framework */; };
 		0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D337915E210CA00B2ED62 /* PHSPanelController.m */; };
-		0D8D337D15E212E400B2ED62 /* PopupPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8D337C15E212E400B2ED62 /* PopupPanel.xib */; };
-		0D96FE0F15E2195100E47D51 /* PHSPanelBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96FE0E15E2195100E47D51 /* PHSPanelBackgroundView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D104D0015F7495700B67EDA /* PHSPhotoScrubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPhotoScrubber.h; sourceTree = "<group>"; };
+		0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPhotoScrubber.m; sourceTree = "<group>"; };
+		0D23954715F7672C007F3AAF /* PopupPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupPanel.xib; sourceTree = "<group>"; };
 		0D3F195B15E8885F008FFA0A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = "<group>"; };
 		0D652D6515DE128D00BF7718 /* PhotoSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D652D6915DE128D00BF7718 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -40,11 +44,9 @@
 		0D76371315DF88E500412555 /* PHSMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSMenuController.m; sourceTree = "<group>"; };
 		0D76371515DF895200412555 /* PHSStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSStatusItemView.h; sourceTree = "<group>"; };
 		0D76371615DF895200412555 /* PHSStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSStatusItemView.m; sourceTree = "<group>"; };
+		0D7EBF6515F7591700C3B6B2 /* TwUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwUI.framework; path = Frameworks/TwUI/build/Release/TwUI.framework; sourceTree = "<group>"; };
 		0D8D337815E210CA00B2ED62 /* PHSPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPanelController.h; sourceTree = "<group>"; };
 		0D8D337915E210CA00B2ED62 /* PHSPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPanelController.m; sourceTree = "<group>"; };
-		0D8D337C15E212E400B2ED62 /* PopupPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupPanel.xib; sourceTree = "<group>"; };
-		0D96FE0D15E2195100E47D51 /* PHSPanelBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPanelBackgroundView.h; sourceTree = "<group>"; };
-		0D96FE0E15E2195100E47D51 /* PHSPanelBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPanelBackgroundView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D7EBF6615F7591700C3B6B2 /* TwUI.framework in Frameworks */,
 				0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +90,7 @@
 		0D652D6815DE128D00BF7718 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D7EBF6515F7591700C3B6B2 /* TwUI.framework */,
 				0D652D6915DE128D00BF7718 /* Cocoa.framework */,
 				0D652D6B15DE128D00BF7718 /* Other Frameworks */,
 			);
@@ -134,8 +138,8 @@
 			children = (
 				0D76371515DF895200412555 /* PHSStatusItemView.h */,
 				0D76371615DF895200412555 /* PHSStatusItemView.m */,
-				0D96FE0D15E2195100E47D51 /* PHSPanelBackgroundView.h */,
-				0D96FE0E15E2195100E47D51 /* PHSPanelBackgroundView.m */,
+				0D104D0015F7495700B67EDA /* PHSPhotoScrubber.h */,
+				0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -147,7 +151,7 @@
 				0D76371315DF88E500412555 /* PHSMenuController.m */,
 				0D8D337815E210CA00B2ED62 /* PHSPanelController.h */,
 				0D8D337915E210CA00B2ED62 /* PHSPanelController.m */,
-				0D8D337C15E212E400B2ED62 /* PopupPanel.xib */,
+				0D23954715F7672C007F3AAF /* PopupPanel.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -207,8 +211,8 @@
 				0D652D7415DE128D00BF7718 /* InfoPlist.strings in Resources */,
 				0D652D7A15DE128D00BF7718 /* Credits.rtf in Resources */,
 				0D652D8015DE128D00BF7718 /* MainMenu.xib in Resources */,
-				0D8D337D15E212E400B2ED62 /* PopupPanel.xib in Resources */,
 				0D3F195C15E8885F008FFA0A /* icon.png in Resources */,
+				0D23954815F7672C007F3AAF /* PopupPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +228,7 @@
 				0D76371415DF88E500412555 /* PHSMenuController.m in Sources */,
 				0D76371715DF895200412555 /* PHSStatusItemView.m in Sources */,
 				0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */,
-				0D96FE0F15E2195100E47D51 /* PHSPanelBackgroundView.m in Sources */,
+				0D104D0215F7495700B67EDA /* PHSPhotoScrubber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

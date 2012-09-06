@@ -7,6 +7,7 @@
 //
 
 #import "PHSPanelController.h"
+#import "PHSPhotoScrubber.h"
 
 @implementation PHSPanelController
 
@@ -16,13 +17,16 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
+    TUINSView *bridgeView = self.window.contentView;
     
-    NSPanel *panel = (id)[self window];
-    [panel setAcceptsMouseMovedEvents:YES];
-    [panel setLevel:NSPopUpMenuWindowLevel];
-    [panel setOpaque:NO];
-    [panel setBackgroundColor:[NSColor clearColor]];
+    self.rootView = [[TUIView alloc] initWithFrame:bridgeView.bounds];
+    self.rootView.backgroundColor = [NSColor colorWithDeviceWhite:0.3f alpha:1.0f];
+    
+    bridgeView.rootView = self.rootView;
+    
+    self.photoScrubber = [[PHSPhotoScrubber alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.rootView.frame.size.width, 48.0f)];
+    
+    [self.rootView addSubview:self.photoScrubber];
 }
 
 #pragma mark - Actions
@@ -42,7 +46,7 @@
     [NSApp activateIgnoringOtherApps:YES];
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-        context.duration = 0.15f;
+        context.duration = 0.1f;
         [[self.window animator] setAlphaValue:1.0f];
     } completionHandler:nil];
 }

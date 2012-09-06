@@ -7,6 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <TwUI/TUIKit.h>
+
+@class PHSPhotoScrubber;
 
 @class PHSPanelController;
 @protocol PHSPanelControllerDelegate <NSObject>
@@ -17,6 +20,8 @@
 @interface PHSPanelController : NSWindowController
 
 @property (nonatomic, weak) id <PHSPanelControllerDelegate> delegate;
+@property (nonatomic, strong) TUIView *rootView;
+@property (nonatomic, strong) PHSPhotoScrubber *photoScrubber;
 
 - (IBAction)openPanel:(id)sender;
 - (IBAction)closePanel:(id)sender;
