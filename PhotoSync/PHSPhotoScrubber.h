@@ -9,8 +9,9 @@
 #import <Cocoa/Cocoa.h>
 #import <TwUI/TUIKit.h>
 
+
 enum {
-    PHSPhotoScrubberControlEventMouseExited = TUIControlEventApplicationReserved <<  0
+    PHSPhotoScrubberControlEventMouseExited = TUIControlEventApplicationReserved <<  1
 };
 typedef NSUInteger PHSPhotoScrubberControlEvents;
 

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D104D0215F7495700B67EDA /* PHSPhotoScrubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */; };
-		0D23954815F7672C007F3AAF /* PopupPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D23954715F7672C007F3AAF /* PopupPanel.xib */; };
+		0D26691A15F9D77B00586D4F /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D26691915F9D77B00586D4F /* ApplicationServices.framework */; };
+		0D26691D15F9D78200586D4F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D26691C15F9D78200586D4F /* QuartzCore.framework */; };
 		0D3F195C15E8885F008FFA0A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F195B15E8885F008FFA0A /* icon.png */; };
 		0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D652D6915DE128D00BF7718 /* Cocoa.framework */; };
 		0D652D7415DE128D00BF7718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D652D7215DE128D00BF7718 /* InfoPlist.strings */; };
@@ -29,13 +30,13 @@
 		0DDEF0EC15F8B3F900B2040F /* photo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0E915F8B3F900B2040F /* photo4.jpg */; };
 		0DDEF0ED15F8B3F900B2040F /* photo5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0EA15F8B3F900B2040F /* photo5.jpg */; };
 		0DDEF0EE15F8B3F900B2040F /* photo6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0EB15F8B3F900B2040F /* photo6.jpg */; };
-		0DDEF0F015F8BB1E00B2040F /* photo7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0EF15F8BB1E00B2040F /* photo7.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D104D0015F7495700B67EDA /* PHSPhotoScrubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPhotoScrubber.h; sourceTree = "<group>"; };
 		0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPhotoScrubber.m; sourceTree = "<group>"; };
-		0D23954715F7672C007F3AAF /* PopupPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupPanel.xib; sourceTree = "<group>"; };
+		0D26691915F9D77B00586D4F /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		0D26691C15F9D78200586D4F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0D3F195B15E8885F008FFA0A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = "<group>"; };
 		0D652D6515DE128D00BF7718 /* PhotoSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D652D6915DE128D00BF7718 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -68,7 +69,6 @@
 		0DDEF0E915F8B3F900B2040F /* photo4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo4.jpg; path = Images/photo4.jpg; sourceTree = "<group>"; };
 		0DDEF0EA15F8B3F900B2040F /* photo5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo5.jpg; path = Images/photo5.jpg; sourceTree = "<group>"; };
 		0DDEF0EB15F8B3F900B2040F /* photo6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo6.jpg; path = Images/photo6.jpg; sourceTree = "<group>"; };
-		0DDEF0EF15F8BB1E00B2040F /* photo7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo7.jpg; path = Images/photo7.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D26691D15F9D78200586D4F /* QuartzCore.framework in Frameworks */,
+				0D26691A15F9D77B00586D4F /* ApplicationServices.framework in Frameworks */,
 				0D7EBF6615F7591700C3B6B2 /* TwUI.framework in Frameworks */,
 				0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */,
 			);
@@ -95,7 +97,6 @@
 				0DDEF0E915F8B3F900B2040F /* photo4.jpg */,
 				0DDEF0EA15F8B3F900B2040F /* photo5.jpg */,
 				0DDEF0EB15F8B3F900B2040F /* photo6.jpg */,
-				0DDEF0EF15F8BB1E00B2040F /* photo7.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -120,6 +121,8 @@
 		0D652D6815DE128D00BF7718 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D26691C15F9D78200586D4F /* QuartzCore.framework */,
+				0D26691915F9D77B00586D4F /* ApplicationServices.framework */,
 				0D7EBF6515F7591700C3B6B2 /* TwUI.framework */,
 				0D652D6915DE128D00BF7718 /* Cocoa.framework */,
 				0D652D6B15DE128D00BF7718 /* Other Frameworks */,
@@ -185,7 +188,6 @@
 				0D76371315DF88E500412555 /* PHSMenuController.m */,
 				0D8D337815E210CA00B2ED62 /* PHSPanelController.h */,
 				0D8D337915E210CA00B2ED62 /* PHSPanelController.m */,
-				0D23954715F7672C007F3AAF /* PopupPanel.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -246,7 +248,6 @@
 				0D652D7A15DE128D00BF7718 /* Credits.rtf in Resources */,
 				0D652D8015DE128D00BF7718 /* MainMenu.xib in Resources */,
 				0D3F195C15E8885F008FFA0A /* icon.png in Resources */,
-				0D23954815F7672C007F3AAF /* PopupPanel.xib in Resources */,
 				0DDEF0D915F8A4B200B2040F /* scrubber-background.png in Resources */,
 				0DDEF0E015F8AF3D00B2040F /* photo1.jpg in Resources */,
 				0DDEF0E115F8AF3D00B2040F /* photo2.jpg in Resources */,
@@ -254,7 +255,6 @@
 				0DDEF0EC15F8B3F900B2040F /* photo4.jpg in Resources */,
 				0DDEF0ED15F8B3F900B2040F /* photo5.jpg in Resources */,
 				0DDEF0EE15F8B3F900B2040F /* photo6.jpg in Resources */,
-				0DDEF0F015F8BB1E00B2040F /* photo7.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

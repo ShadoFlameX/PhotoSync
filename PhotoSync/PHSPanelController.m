@@ -26,31 +26,46 @@
 
 #pragma mark - Lifecycle
 
-- (void)awakeFromNib
+- (id)init
 {
-    [self.window setOpaque:NO];
-    [self.window setBackgroundColor:[NSColor clearColor]];
-    
-    _photos = @[[NSImage imageNamed:@"photo1"],[NSImage imageNamed:@"photo2"],[NSImage imageNamed:@"photo3"],[NSImage imageNamed:@"photo4"],[NSImage imageNamed:@"photo5"],[NSImage imageNamed:@"photo6"],[NSImage imageNamed:@"photo7"]];
-    
-    TUINSView *bridgeView = [[TUINSView alloc] initWithFrame:NSMakeRect(0.0f, 0.0f, self.window.frame.size.width, self.window.frame.size.height)];
-    [bridgeView tui_setOpaque:NO];
-    self.window.contentView = bridgeView;
-    
-    _rootView = [[TUIView alloc] initWithFrame:bridgeView.bounds];
-    _rootView.backgroundColor = [NSColor colorWithCalibratedWhite:0.2f alpha:1.0f];
-    _rootView.layer.cornerRadius = 5.0f;
-    
-    bridgeView.rootView = self.rootView;
-    
-    _photoScrubber = [[PHSPhotoScrubber alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.rootView.frame.size.width, 64.0f)];
-    [_photoScrubber addTarget:self action:@selector(updatePhotoPreview:) forControlEvents:TUIControlEventValueChanged];
-    [_photoScrubber addTarget:self action:@selector(hidePhotoPreview:) forControlEvents:TUIControlEventMouseUpInside];
-    
-    _photoQuickView = [[PHSPhotoQuickView alloc] initWithFrame:CGRectMake(0.0f, 64.0f, _rootView.bounds.size.width, _rootView.bounds.size.height - 64.0f)];
-    
-    [self.rootView addSubview:self.photoQuickView];
-    [self.rootView addSubview:self.photoScrubber];
+    self = [super init];
+    if (self) {
+        CGRect windowRect = CGRectMake(0, 0, 480, 540);
+        
+        /** Table View */
+        self.window = [[NSWindow alloc] initWithContentRect:windowRect styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:NO];
+        [self.window setReleasedWhenClosed:NO];
+        [self.window setMinSize:NSMakeSize(windowRect.size.width, windowRect.size.height)];
+        [self.window center];
+        [self.window setOpaque:NO];
+        [self.window setBackgroundColor:[NSColor clearColor]];
+        [self.window setAcceptsMouseMovedEvents:YES];
+        
+        _photos = @[[NSImage imageNamed:@"photo1"],[NSImage imageNamed:@"photo2"],[NSImage imageNamed:@"photo3"],[NSImage imageNamed:@"photo4"],[NSImage imageNamed:@"photo5"],[NSImage imageNamed:@"photo6"]];
+        
+        TUINSView *bridgeView = [[TUINSView alloc] initWithFrame:NSMakeRect(0.0f, 0.0f, self.window.frame.size.width, self.window.frame.size.height)];
+        [bridgeView tui_setOpaque:NO];
+        self.window.contentView = bridgeView;
+        
+        _rootView = [[TUIView alloc] initWithFrame:bridgeView.bounds];
+        _rootView.backgroundColor = [NSColor colorWithCalibratedWhite:0.2f alpha:1.0f];
+        _rootView.layer.cornerRadius = 5.0f;
+        
+        bridgeView.rootView = self.rootView;
+        
+        _photoScrubber = [[PHSPhotoScrubber alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.rootView.frame.size.width, 64.0f)];
+        [_photoScrubber addTarget:self action:@selector(updatePhotoPreview:) forControlEvents:TUIControlEventValueChanged];
+        [_photoScrubber addTarget:self action:@selector(hidePhotoPreview:) forControlEvents:PHSPhotoScrubberControlEventMouseExited];
+        
+        NSTrackingArea *scrubberTracking = [[NSTrackingArea alloc] initWithRect:NSRectFromCGRect(_photoScrubber.frame) options:NSTrackingActiveInActiveApp | NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved owner:_photoScrubber userInfo:nil];
+        [bridgeView addTrackingArea:scrubberTracking];
+        
+        _photoQuickView = [[PHSPhotoQuickView alloc] initWithFrame:CGRectMake(0.0f, 64.0f, _rootView.bounds.size.width, _rootView.bounds.size.height - 64.0f)];
+        
+        [self.rootView addSubview:self.photoQuickView];
+        [self.rootView addSubview:self.photoScrubber];
+    }
+    return self;
 }
 
 #pragma mark - Actions

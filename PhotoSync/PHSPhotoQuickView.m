@@ -7,23 +7,20 @@
 //
 
 #import "PHSPhotoQuickView.h"
+#import <Quartz/Quartz.h>
 
 static const CGFloat PHSPhotoQuickViewAnimationScale = 1.02f;
 
 @interface PHSPhotoQuickView ()
-@property (nonatomic, strong, readonly) TUIImageView *imageView;
+@property (nonatomic, strong, readonly) TUIView *photoView;
 @end
 
 @implementation PHSPhotoQuickView
 
 #pragma mark - Properties
 
-@synthesize imageView = _imageView;
-
-- (NSImage *)image
-{
-    return _imageView.image;
-}
+@synthesize photoView = _photoView;
+@synthesize image = _image;
 
 - (void)setImage:(NSImage *)image
 {
@@ -32,32 +29,34 @@ static const CGFloat PHSPhotoQuickViewAnimationScale = 1.02f;
 
 - (void)setImage:(NSImage *)image animated:(BOOL)animated
 {
-    if (_imageView.image == image)
-        return;
-    
-    if (!animated || (_imageView.image && image)) {
-        _imageView.image = image;
+    id cgImage = (id)image.tui_CGImage;
+        
+    if (!animated || (_image && cgImage)) {
+        _photoView.layer.contents = cgImage;
         return;
     }
     
     if (image) {
-        _imageView.alpha = 0.0f;
-        _imageView.hidden = NO;
+        _photoView.alpha = 0.0f;
+        _photoView.hidden = NO;
         
-        [TUIView animateWithDuration:0.35f animations:^{
-            _imageView.image = image;
-            _imageView.alpha = 1.0f;
-            _imageView.transform = CGAffineTransformIdentity;
+        [TUIView animateWithDuration:0.25f animations:^{
+            _photoView.layer.contents = cgImage;
+            _photoView.alpha = 1.0f;
+            _photoView.transform = CGAffineTransformIdentity;
         }];
     } else {
-        [TUIView animateWithDuration:0.5f animations:^{
-            _imageView.alpha = 0.0f;
-            _imageView.transform = CGAffineTransformMakeScale(PHSPhotoQuickViewAnimationScale, PHSPhotoQuickViewAnimationScale);
+        [TUIView animateWithDuration:0.35f animations:^{
+            _photoView.alpha = 0.0f;
+            _photoView.transform = CGAffineTransformMakeScale(PHSPhotoQuickViewAnimationScale, PHSPhotoQuickViewAnimationScale);
         } completion:^(BOOL finished) {
-            _imageView.image = image;
-            _imageView.hidden = YES;
+            _photoView.layer.contents = NULL;
+            if (finished)
+                _photoView.hidden = YES;
         }];
     }
+    
+    _image = image;
 }
 
 #pragma mark - Lifecycle
@@ -68,15 +67,16 @@ static const CGFloat PHSPhotoQuickViewAnimationScale = 1.02f;
     if (self) {
         self.backgroundColor = [NSColor clearColor];
         
-        _imageView = [[TUIImageView alloc] initWithFrame:self.bounds];
-        _imageView.autoresizingMask = TUIViewAutoresizingFlexibleWidth | TUIViewAutoresizingFlexibleHeight;
-        _imageView.backgroundColor = [NSColor blackColor];
-        _imageView.contentMode = TUIViewContentModeScaleAspectFit;
-        _imageView.alpha = 0.0f;
-        _imageView.transform = CGAffineTransformMakeScale(PHSPhotoQuickViewAnimationScale, PHSPhotoQuickViewAnimationScale);
-        _imageView.hidden = YES;
+        _photoView = [[TUIImageView alloc] initWithFrame:self.bounds];
+        _photoView.autoresizingMask = TUIViewAutoresizingFlexibleWidth | TUIViewAutoresizingFlexibleHeight;
+        _photoView.backgroundColor = [NSColor blackColor];
+        _photoView.layer.contentsGravity = kCAGravityResizeAspect;
+        _photoView.alpha = 0.0f;
+        _photoView.transform = CGAffineTransformMakeScale(PHSPhotoQuickViewAnimationScale, PHSPhotoQuickViewAnimationScale);
+        _photoView.hidden = YES;
+        _photoView.layer.contents = NULL;
         
-        [self addSubview:_imageView];
+        [self addSubview:_photoView];
     }
     return self;
 }

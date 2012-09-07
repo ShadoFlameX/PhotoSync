@@ -37,7 +37,7 @@
     return self;
 }
 
-- (void)mouseDragged:(NSEvent *)theEvent
+- (void)mouseMoved:(NSEvent *)theEvent
 {
     CGPoint point = [_backgroundView convertFromWindowPoint:[theEvent locationInWindow]];
     if ([_backgroundView pointInside:point]) {
@@ -46,9 +46,9 @@
     }
 }
 
-- (void)mouseUp:(NSEvent *)event fromSubview:(TUIView *)subview
+- (void)mouseExited:(NSEvent *)theEvent
 {
-    [self sendActionsForControlEvents:TUIControlEventMouseUpInside];
+    [self sendActionsForControlEvents:PHSPhotoScrubberControlEventMouseExited];
 }
 
 @end

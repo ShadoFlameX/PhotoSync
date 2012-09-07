@@ -17,7 +17,7 @@
 - (PHSPanelController *)panelController
 {
     if (!_panelController) {
-        _panelController = [[PHSPanelController alloc] initWithWindowNibName:@"PopupPanel"];
+        _panelController = [[PHSPanelController alloc] init];
         _panelController.delegate = self;
     }
     
