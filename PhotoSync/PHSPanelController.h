@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <TwUI/TUIKit.h>
 
 @class PHSPhotoScrubber;
 @class PHSPhotoQuickView;

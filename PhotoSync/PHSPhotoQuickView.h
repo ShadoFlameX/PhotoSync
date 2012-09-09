@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 skeuo. All rights reserved.
 //
 
-#import <TwUI/TUIKit.h>
-
 @interface PHSPhotoQuickView : TUIView
 
 @property (nonatomic, strong) NSImage *image;

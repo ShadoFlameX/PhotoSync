@@ -7,8 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <TwUI/TUIKit.h>
-
 
 enum {
     PHSPhotoScrubberControlEventMouseExited = TUIControlEventApplicationReserved <<  1
