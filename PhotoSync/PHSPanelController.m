@@ -12,6 +12,7 @@
 
 @interface PHSPanelController () {
     NSArray *_photos;
+    TUIButton *_quitButton;
 }
 
 @end
@@ -39,7 +40,6 @@
         [self.window center];
         [self.window setOpaque:NO];
         [self.window setBackgroundColor:[NSColor clearColor]];
-        [self.window setAcceptsMouseMovedEvents:YES];
         
         _photos = @[[NSImage imageNamed:@"photo1"],[NSImage imageNamed:@"photo2"],[NSImage imageNamed:@"photo3"],[NSImage imageNamed:@"photo4"],[NSImage imageNamed:@"photo5"],[NSImage imageNamed:@"photo6"]];
         
@@ -61,9 +61,18 @@
         [bridgeView addTrackingArea:scrubberTracking];
         
         _photoQuickView = [[PHSPhotoQuickView alloc] initWithFrame:CGRectMake(0.0f, 64.0f, _rootView.bounds.size.width, _rootView.bounds.size.height - 64.0f)];
+        _photoQuickView.userInteractionEnabled = NO;
+        
+        _quitButton = [[TUIButton alloc] initWithFrame:CGRectMake(20.0f, _rootView.bounds.size.height - 40.0f, 20.0f, 20.0f)];
+        _quitButton.backgroundColor = [NSColor lightGrayColor];
+        _quitButton.autoresizingMask = TUIViewAutoresizingFlexibleBottomMargin;
+        _quitButton.titleLabel.text = NSLocalizedString(@"X", nil);
+        _quitButton.titleLabel.alignment = TUITextAlignmentCenter;
+        [_quitButton addTarget:self action:@selector(quitApp:) forControlEvents:TUIControlEventMouseUpInside];
         
         [self.rootView addSubview:self.photoQuickView];
         [self.rootView addSubview:self.photoScrubber];
+        [self.rootView addSubview:_quitButton];
     }
     return self;
 }
@@ -103,12 +112,25 @@
 
 - (void)updatePhotoPreview:(PHSPhotoScrubber *)photoScrubber
 {
+    [TUIView animateWithDuration:0.2f animations:^{
+        _quitButton.alpha = 0.0f;
+    }];
+    
     [_photoQuickView setImage:[_photos objectAtIndex:photoScrubber.index % _photos.count] animated:YES];
 }
 
 - (void)hidePhotoPreview:(PHSPhotoScrubber *)photoScrubber
 {
+    [TUIView animateWithDuration:0.2f animations:^{
+        _quitButton.alpha = 1.0f;
+    }];
+    
     [_photoQuickView setImage:nil animated:YES];
+}
+
+- (void)quitApp:(id)sender
+{
+    [[NSApplication sharedApplication] terminate:nil];
 }
 
 @end
