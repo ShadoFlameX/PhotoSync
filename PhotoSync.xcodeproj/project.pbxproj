@@ -11,6 +11,8 @@
 		0D26691A15F9D77B00586D4F /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D26691915F9D77B00586D4F /* ApplicationServices.framework */; };
 		0D26691D15F9D78200586D4F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D26691C15F9D78200586D4F /* QuartzCore.framework */; };
 		0D3F195C15E8885F008FFA0A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F195B15E8885F008FFA0A /* icon.png */; };
+		0D4FC3AD15FC466800D033AE /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4FC3AC15FC466800D033AE /* TwUI.framework */; };
+		0D4FC3AE15FC466F00D033AE /* TwUI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D4FC3AC15FC466800D033AE /* TwUI.framework */; };
 		0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D652D6915DE128D00BF7718 /* Cocoa.framework */; };
 		0D652D7415DE128D00BF7718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D652D7215DE128D00BF7718 /* InfoPlist.strings */; };
 		0D652D7615DE128D00BF7718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D652D7515DE128D00BF7718 /* main.m */; };
@@ -19,7 +21,6 @@
 		0D652D8015DE128D00BF7718 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D652D7E15DE128D00BF7718 /* MainMenu.xib */; };
 		0D76371415DF88E500412555 /* PHSMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371315DF88E500412555 /* PHSMenuController.m */; };
 		0D76371715DF895200412555 /* PHSStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371615DF895200412555 /* PHSStatusItemView.m */; };
-		0D7EBF6615F7591700C3B6B2 /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7EBF6515F7591700C3B6B2 /* TwUI.framework */; };
 		0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D337915E210CA00B2ED62 /* PHSPanelController.m */; };
 		0DDEF0D315F8932400B2040F /* PHSPopoverWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */; };
 		0DDEF0D915F8A4B200B2040F /* scrubber-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D815F8A4B200B2040F /* scrubber-background.png */; };
@@ -32,12 +33,26 @@
 		0DDEF0EE15F8B3F900B2040F /* photo6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0EB15F8B3F900B2040F /* photo6.jpg */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0D4FC3A915FC464C00D033AE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D4FC3AE15FC466F00D033AE /* TwUI.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0D104D0015F7495700B67EDA /* PHSPhotoScrubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPhotoScrubber.h; sourceTree = "<group>"; };
 		0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPhotoScrubber.m; sourceTree = "<group>"; };
 		0D26691915F9D77B00586D4F /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		0D26691C15F9D78200586D4F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0D3F195B15E8885F008FFA0A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = "<group>"; };
+		0D4FC3AC15FC466800D033AE /* TwUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwUI.framework; path = "../Library/Developer/Xcode/DerivedData/PhotoSync-glnckevtiwmpyrcuaocixtfhzlph/Build/Products/Debug/TwUI.framework"; sourceTree = "<group>"; };
 		0D652D6515DE128D00BF7718 /* PhotoSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D652D6915DE128D00BF7718 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0D652D6C15DE128D00BF7718 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -55,7 +70,6 @@
 		0D76371315DF88E500412555 /* PHSMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSMenuController.m; sourceTree = "<group>"; };
 		0D76371515DF895200412555 /* PHSStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSStatusItemView.h; sourceTree = "<group>"; };
 		0D76371615DF895200412555 /* PHSStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSStatusItemView.m; sourceTree = "<group>"; };
-		0D7EBF6515F7591700C3B6B2 /* TwUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwUI.framework; path = Frameworks/TwUI/build/Release/TwUI.framework; sourceTree = "<group>"; };
 		0D8D337815E210CA00B2ED62 /* PHSPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPanelController.h; sourceTree = "<group>"; };
 		0D8D337915E210CA00B2ED62 /* PHSPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPanelController.m; sourceTree = "<group>"; };
 		0DDEF0D115F8932400B2040F /* PHSPopoverWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPopoverWindow.h; sourceTree = "<group>"; };
@@ -76,9 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4FC3AD15FC466800D033AE /* TwUI.framework in Frameworks */,
 				0D26691D15F9D78200586D4F /* QuartzCore.framework in Frameworks */,
 				0D26691A15F9D77B00586D4F /* ApplicationServices.framework in Frameworks */,
-				0D7EBF6615F7591700C3B6B2 /* TwUI.framework in Frameworks */,
 				0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,9 +135,9 @@
 		0D652D6815DE128D00BF7718 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D4FC3AC15FC466800D033AE /* TwUI.framework */,
 				0D26691C15F9D78200586D4F /* QuartzCore.framework */,
 				0D26691915F9D77B00586D4F /* ApplicationServices.framework */,
-				0D7EBF6515F7591700C3B6B2 /* TwUI.framework */,
 				0D652D6915DE128D00BF7718 /* Cocoa.framework */,
 				0D652D6B15DE128D00BF7718 /* Other Frameworks */,
 			);
@@ -202,6 +216,7 @@
 				0D652D6115DE128D00BF7718 /* Sources */,
 				0D652D6215DE128D00BF7718 /* Frameworks */,
 				0D652D6315DE128D00BF7718 /* Resources */,
+				0D4FC3A915FC464C00D033AE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -359,6 +374,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Library/Developer/Xcode/DerivedData/PhotoSync-glnckevtiwmpyrcuaocixtfhzlph/Build/Products/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoSync/PhotoSync-Prefix.pch";
 				INFOPLIST_FILE = "PhotoSync/PhotoSync-Info.plist";
@@ -371,6 +390,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Library/Developer/Xcode/DerivedData/PhotoSync-glnckevtiwmpyrcuaocixtfhzlph/Build/Products/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoSync/PhotoSync-Prefix.pch";
 				INFOPLIST_FILE = "PhotoSync/PhotoSync-Info.plist";
