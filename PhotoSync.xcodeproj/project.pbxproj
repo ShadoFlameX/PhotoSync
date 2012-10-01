@@ -22,6 +22,7 @@
 		0D76371415DF88E500412555 /* PHSMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371315DF88E500412555 /* PHSMenuController.m */; };
 		0D76371715DF895200412555 /* PHSStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D76371615DF895200412555 /* PHSStatusItemView.m */; };
 		0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D337915E210CA00B2ED62 /* PHSPanelController.m */; };
+		0D96DF141619716E00E3BA48 /* PHSGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96DF131619716E00E3BA48 /* PHSGridView.m */; };
 		0DDEF0D315F8932400B2040F /* PHSPopoverWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */; };
 		0DDEF0D915F8A4B200B2040F /* scrubber-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D815F8A4B200B2040F /* scrubber-background.png */; };
 		0DDEF0DC15F8A7FD00B2040F /* PHSPhotoQuickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEF0DB15F8A7FD00B2040F /* PHSPhotoQuickView.m */; };
@@ -72,6 +73,8 @@
 		0D76371615DF895200412555 /* PHSStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSStatusItemView.m; sourceTree = "<group>"; };
 		0D8D337815E210CA00B2ED62 /* PHSPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPanelController.h; sourceTree = "<group>"; };
 		0D8D337915E210CA00B2ED62 /* PHSPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPanelController.m; sourceTree = "<group>"; };
+		0D96DF121619716E00E3BA48 /* PHSGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSGridView.h; sourceTree = "<group>"; };
+		0D96DF131619716E00E3BA48 /* PHSGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSGridView.m; sourceTree = "<group>"; };
 		0DDEF0D115F8932400B2040F /* PHSPopoverWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPopoverWindow.h; sourceTree = "<group>"; };
 		0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPopoverWindow.m; sourceTree = "<group>"; };
 		0DDEF0D815F8A4B200B2040F /* scrubber-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scrubber-background.png"; path = "Images/scrubber-background.png"; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */,
 				0DDEF0DA15F8A7FD00B2040F /* PHSPhotoQuickView.h */,
 				0DDEF0DB15F8A7FD00B2040F /* PHSPhotoQuickView.m */,
+				0D96DF121619716E00E3BA48 /* PHSGridView.h */,
+				0D96DF131619716E00E3BA48 /* PHSGridView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				0D104D0215F7495700B67EDA /* PHSPhotoScrubber.m in Sources */,
 				0DDEF0D315F8932400B2040F /* PHSPopoverWindow.m in Sources */,
 				0DDEF0DC15F8A7FD00B2040F /* PHSPhotoQuickView.m in Sources */,
+				0D96DF141619716E00E3BA48 /* PHSGridView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

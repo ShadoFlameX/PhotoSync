@@ -17,7 +17,7 @@
 
 - (void)applicationWillResignActive:(NSNotification *)aNotification
 {
-//    [self.menuController.panelController closePanel:nil];
+    [self.menuController.panelController closePanel:nil];
 }
 
 
