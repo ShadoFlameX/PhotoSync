@@ -60,10 +60,7 @@
         _gridView.contentInset = TUIEdgeInsetsMake(3.0f, 3.0f, 3.0f, 3.0f);
         _gridView.itemSize = CGSizeMake(250.0f, 250.0f);
         _gridView.dataSource = self;
-        
-//        _photoQuickView = [[PHSPhotoQuickView alloc] initWithFrame:CGRectMake(0.0f, 64.0f, _rootView.bounds.size.width, _rootView.bounds.size.height - 64.0f)];
-//        _photoQuickView.userInteractionEnabled = NO;
-        
+
         _quitButton = [[TUIButton alloc] initWithFrame:CGRectMake(20.0f, _rootView.bounds.size.height - 40.0f, 20.0f, 20.0f)];
         _quitButton.backgroundColor = [NSColor lightGrayColor];
         _quitButton.autoresizingMask = TUIViewAutoresizingFlexibleBottomMargin;
@@ -71,7 +68,6 @@
         _quitButton.titleLabel.alignment = TUITextAlignmentCenter;
         [_quitButton addTarget:self action:@selector(quitApp:) forControlEvents:TUIControlEventMouseUpInside];
         
-//        [self.rootView addSubview:self.photoQuickView];
         [self.rootView addSubview:self.gridView];
         [self.rootView addSubview:self.photoScrubber];
         [self.rootView addSubview:_quitButton];
@@ -180,6 +176,9 @@
     
     return itemView;
 }
+
+
+#pragma mark - TUIScrollViewDelegate methods
 
 
 

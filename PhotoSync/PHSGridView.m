@@ -13,6 +13,7 @@ static CGFloat const PHSGridViewMinimumPadding = 3.0f;
 @interface PHSGridView () {
     BOOL _needsReloadData;
     BOOL _needsItemSizing;
+    BOOL _resetContentOffset;
 }
 
 @property (nonatomic, strong) NSMutableArray *items;
@@ -33,7 +34,8 @@ static CGFloat const PHSGridViewMinimumPadding = 3.0f;
     _dataSource = dataSource;
     
     _needsReloadData = YES;
-    [self setNeedsLayout];
+    _resetContentOffset = YES;
+    [self setNeedsLayout];    
 }
 
 - (void)setItemSize:(CGSize)itemSize
@@ -113,6 +115,11 @@ static CGFloat const PHSGridViewMinimumPadding = 3.0f;
     
     [self layoutItems];
     
+    if (_resetContentOffset) {
+        [self scrollToTopAnimated:NO];
+    }
+    
+    _resetContentOffset = NO;
     _needsReloadData = NO;
 }
 
