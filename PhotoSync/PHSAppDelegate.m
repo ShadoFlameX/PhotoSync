@@ -15,6 +15,11 @@
     self.menuController = [[PHSMenuController alloc] init];
 }
 
+- (void)applicationWillBecomeActive:(NSNotification *)notification
+{
+    [self.menuController.panelController.window becomeKeyWindow];
+}
+
 - (void)applicationWillResignActive:(NSNotification *)aNotification
 {
     [self.menuController.panelController closePanel:nil];

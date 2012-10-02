@@ -1,3 +1,3 @@
 [submodule "Frameworks/TwUI"]
 	path = Frameworks/TwUI
-	url = git://github.com/github/twui.git
+	url = git@github.com:ShadoFlameX/twui.git

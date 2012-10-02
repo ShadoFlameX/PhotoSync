@@ -23,7 +23,6 @@
 @property (nonatomic, weak) id <PHSPanelControllerDelegate> delegate;
 @property (nonatomic, strong) TUIView *rootView;
 @property (nonatomic, strong) PHSGridView *gridView;
-@property (nonatomic, strong) PHSPhotoScrubber *photoScrubber;
 @property (nonatomic, strong) PHSPhotoQuickView *photoQuickView;
 
 - (IBAction)openPanel:(id)sender;

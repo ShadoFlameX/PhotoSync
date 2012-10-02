@@ -6,14 +6,17 @@
 //  Copyright (c) 2012 skeuo. All rights reserved.
 //
 
+#import <TwUI/NSImage+TUIExtensions.h>
 #import "PHSPanelController.h"
-#import "PHSPhotoScrubber.h"
+#import "PHSNavigationBar.h"
 #import "PHSPhotoQuickView.h"
 
 @interface PHSPanelController () {
     NSArray *_photos;
     TUIButton *_quitButton;
 }
+
+@property (nonatomic, strong) PHSNavigationBar *navigationBar;
 
 @end
 
@@ -43,33 +46,28 @@
         [bridgeView tui_setOpaque:NO];
         self.window.contentView = bridgeView;
         
-        _rootView = [[TUIView alloc] initWithFrame:bridgeView.bounds];
-        _rootView.backgroundColor = [NSColor colorWithCalibratedWhite:0.2f alpha:1.0f];
-        _rootView.layer.cornerRadius = 5.0f;
+        self.rootView = [[TUIView alloc] initWithFrame:bridgeView.bounds];
+        self.rootView.backgroundColor = [NSColor colorWithCalibratedWhite:0.2f alpha:1.0f];
+        self.rootView.layer.cornerRadius = 5.0f;
         
         bridgeView.rootView = self.rootView;
         
-        _photoScrubber = [[PHSPhotoScrubber alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.rootView.frame.size.width, 64.0f)];
-        [_photoScrubber addTarget:self action:@selector(updatePhotoPreview:) forControlEvents:TUIControlEventValueChanged];
-        [_photoScrubber addTarget:self action:@selector(hidePhotoPreview:) forControlEvents:PHSPhotoScrubberControlEventMouseExited];
-        
-        NSTrackingArea *scrubberTracking = [[NSTrackingArea alloc] initWithRect:NSRectFromCGRect(_photoScrubber.frame) options:NSTrackingActiveInActiveApp | NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved owner:_photoScrubber userInfo:nil];
-        [bridgeView addTrackingArea:scrubberTracking];
-        
-        _gridView = [[PHSGridView alloc] initWithFrame:CGRectMake(0.0f, 64.0f, _rootView.bounds.size.width, _rootView.bounds.size.height - 64.0f)];
-        _gridView.contentInset = TUIEdgeInsetsMake(3.0f, 3.0f, 3.0f, 3.0f);
-        _gridView.itemSize = CGSizeMake(250.0f, 250.0f);
-        _gridView.dataSource = self;
+        self.navigationBar = [[PHSNavigationBar alloc] initWithFrame:CGRectMake(0.0f, _rootView.bounds.size.height - 42.0f, _rootView.bounds.size.width, 42.0f)];
 
-        _quitButton = [[TUIButton alloc] initWithFrame:CGRectMake(20.0f, _rootView.bounds.size.height - 40.0f, 20.0f, 20.0f)];
+        self.gridView = [[PHSGridView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _rootView.bounds.size.width, _rootView.bounds.size.height - self.navigationBar.frame.size.height)];
+        self.gridView.contentInset = TUIEdgeInsetsMake(3.0f, 3.0f, 3.0f, 3.0f);
+        self.gridView.itemSize = CGSizeMake(250.0f, 250.0f);
+        self.gridView.dataSource = self;
+
+        _quitButton = [[TUIButton alloc] initWithFrame:CGRectMake(20.0f, 20.0f, 40.0f, 20.0f)];
         _quitButton.backgroundColor = [NSColor lightGrayColor];
         _quitButton.autoresizingMask = TUIViewAutoresizingFlexibleBottomMargin;
-        _quitButton.titleLabel.text = NSLocalizedString(@"X", nil);
+        _quitButton.titleLabel.text = NSLocalizedString(@"Quit", nil);
         _quitButton.titleLabel.alignment = TUITextAlignmentCenter;
         [_quitButton addTarget:self action:@selector(quitApp:) forControlEvents:TUIControlEventMouseUpInside];
         
         [self.rootView addSubview:self.gridView];
-        [self.rootView addSubview:self.photoScrubber];
+        [self.rootView addSubview:self.navigationBar];
         [self.rootView addSubview:_quitButton];
     }
     return self;
@@ -85,6 +83,7 @@
     NSRect rect = NSMakeRect(origin.x, origin.y, self.window.frame.size.width, self.window.frame.size.height);
     
     [NSApp activateIgnoringOtherApps:NO];
+    [self.window becomeKeyWindow];
     [self.window setAlphaValue:0.0f];
     [self.window setFrame:rect display:YES];
     [NSApp arrangeInFront:sender];
@@ -104,27 +103,10 @@
         [[self.window animator] setAlphaValue:0.0f];
 
     } completionHandler:^{
+        [self.window resignKeyWindow];
         [self.window orderOut:nil];
         self.photoQuickView.image = nil;
     }];
-}
-
-- (void)updatePhotoPreview:(PHSPhotoScrubber *)photoScrubber
-{
-    [TUIView animateWithDuration:0.2f animations:^{
-        _quitButton.alpha = 0.0f;
-    }];
-    
-    [_photoQuickView setImage:[_photos objectAtIndex:photoScrubber.index % _photos.count] animated:YES];
-}
-
-- (void)hidePhotoPreview:(PHSPhotoScrubber *)photoScrubber
-{
-    [TUIView animateWithDuration:0.2f animations:^{
-        _quitButton.alpha = 1.0f;
-    }];
-    
-    [_photoQuickView setImage:nil animated:YES];
 }
 
 - (void)quitApp:(id)sender
@@ -145,34 +127,12 @@
 {
     TUIView *itemView = [[TUIView alloc] initWithFrame:CGRectZero];
     itemView.layer.cornerRadius = 3.0f;
+    itemView.layer.contentsGravity = kCAGravityResizeAspectFill;
+    itemView.layer.masksToBounds = YES;
     
-    NSColor *color = nil;
+    CGImageRef imageRef = ((NSImage *)[NSImage imageNamed:[NSString stringWithFormat:@"photo%ld",index % 11 + 1]]).tui_CGImage;
     
-    switch (index % 5) {
-        case 0:
-            color = [NSColor redColor];
-            break;
-
-        case 1:
-            color = [NSColor greenColor];
-            break;
-            
-        case 2:
-            color = [NSColor blueColor];
-            break;
-            
-        case 3:
-            color = [NSColor orangeColor];
-            break;
-            
-        case 4:
-            color = [NSColor purpleColor];
-            break;
-        default:
-            break;
-    }
-    
-    itemView.backgroundColor = color;
+    itemView.layer.contents = (__bridge id)imageRef;
     
     return itemView;
 }
