@@ -8,14 +8,6 @@
 
 #import "PHSNavigationBar.h"
 
-@interface PHSNavigationBar ()
-@property (nonatomic, strong) TUIButton *personButton;
-@property (nonatomic, strong) TUIButton *eventButton;
-@property (nonatomic, strong) TUIButton *calendarButton;
-@property (nonatomic, strong) TUIButton *searchButton;
-@property (nonatomic, strong) TUIButton *addPhotosButton;
-@end
-
 @implementation PHSNavigationBar
 
 - (id)initWithFrame:(CGRect)frame

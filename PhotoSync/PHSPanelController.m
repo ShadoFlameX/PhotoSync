@@ -10,13 +10,17 @@
 #import "PHSPanelController.h"
 #import "PHSNavigationBar.h"
 #import "PHSPhotoQuickView.h"
+#import "PHSPersonPopover.h"
+#import "PHSPhotoStorageManager.h"
 
 @interface PHSPanelController () {
-    NSArray *_photos;
     TUIButton *_quitButton;
+    TUIButton *_linkButton;
 }
 
+@property (nonatomic, strong) NSArray *photoPaths;
 @property (nonatomic, strong) PHSNavigationBar *navigationBar;
+@property (nonatomic, strong) PHSPersonPopover *personPopover;
 
 @end
 
@@ -40,8 +44,6 @@
         [self.window setOpaque:NO];
         [self.window setBackgroundColor:[NSColor clearColor]];
         
-        _photos = @[[NSImage imageNamed:@"photo1"],[NSImage imageNamed:@"photo2"],[NSImage imageNamed:@"photo3"],[NSImage imageNamed:@"photo4"],[NSImage imageNamed:@"photo5"],[NSImage imageNamed:@"photo6"]];
-        
         TUINSView *bridgeView = [[TUINSView alloc] initWithFrame:NSMakeRect(0.0f, 0.0f, self.window.frame.size.width, self.window.frame.size.height)];
         [bridgeView tui_setOpaque:NO];
         self.window.contentView = bridgeView;
@@ -53,6 +55,7 @@
         bridgeView.rootView = self.rootView;
         
         self.navigationBar = [[PHSNavigationBar alloc] initWithFrame:CGRectMake(0.0f, _rootView.bounds.size.height - 42.0f, _rootView.bounds.size.width, 42.0f)];
+        [self.navigationBar.personButton addTarget:self action:@selector(showPersonPopover:) forControlEvents:TUIControlEventMouseUpInside];
 
         self.gridView = [[PHSGridView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _rootView.bounds.size.width, _rootView.bounds.size.height - self.navigationBar.frame.size.height)];
         self.gridView.contentInset = TUIEdgeInsetsMake(3.0f, 3.0f, 3.0f, 3.0f);
@@ -66,9 +69,17 @@
         _quitButton.titleLabel.alignment = TUITextAlignmentCenter;
         [_quitButton addTarget:self action:@selector(quitApp:) forControlEvents:TUIControlEventMouseUpInside];
         
+        _linkButton = [[TUIButton alloc] initWithFrame:CGRectMake(_rootView.bounds.size.width - 60.0f , 20.0f, 40.0f, 20.0f)];
+        _linkButton.backgroundColor = [NSColor lightGrayColor];
+        _linkButton.autoresizingMask = TUIViewAutoresizingFlexibleBottomMargin | TUIViewAutoresizingFlexibleLeftMargin;
+        _linkButton.titleLabel.text = NSLocalizedString(@"Load", nil);
+        _linkButton.titleLabel.alignment = TUITextAlignmentCenter;
+        [_linkButton addTarget:self action:@selector(linkClicked:) forControlEvents:TUIControlEventMouseUpInside];
+        
         [self.rootView addSubview:self.gridView];
         [self.rootView addSubview:self.navigationBar];
         [self.rootView addSubview:_quitButton];
+        [self.rootView addSubview:_linkButton];
     }
     return self;
 }
@@ -109,6 +120,27 @@
     }];
 }
 
+- (void)showPersonPopover:(id)sender
+{
+    if (self.personPopover.shown) return;
+    
+    TUIViewController *viewController = [[TUIViewController alloc] init];
+    
+    self.personPopover = [[PHSPersonPopover alloc] initWithContentViewController:viewController];
+    [self.personPopover showRelativeToRect:self.navigationBar.personButton.frame ofView:self.navigationBar preferredEdge:CGRectMinXEdge];
+}
+
+- (void)linkClicked:(id)sender
+{
+    [[PHSPhotoStorageManager sharedManager] authenticateWithCompletion:^(BOOL success) {
+        [[PHSPhotoStorageManager sharedManager] loadPhotoPathsWithCompletion:^(NSArray *photoPaths, NSError *error) {
+            self.photoPaths = photoPaths;
+            [self.gridView reloadData];
+            [self.gridView scrollToTopAnimated:NO];
+        }];
+    }];
+}
+
 - (void)quitApp:(id)sender
 {
     [[NSApplication sharedApplication] terminate:nil];
@@ -119,7 +151,7 @@
 
 - (NSUInteger)numberOfItemsInGridView:(PHSGridView *)gridView
 {
-    return 20;
+    return self.photoPaths.count;
 }
 
 
@@ -129,18 +161,14 @@
     itemView.layer.cornerRadius = 3.0f;
     itemView.layer.contentsGravity = kCAGravityResizeAspectFill;
     itemView.layer.masksToBounds = YES;
-    
-    CGImageRef imageRef = ((NSImage *)[NSImage imageNamed:[NSString stringWithFormat:@"photo%ld",index % 11 + 1]]).tui_CGImage;
-    
-    itemView.layer.contents = (__bridge id)imageRef;
-    
+        
+    [[PHSPhotoStorageManager sharedManager] photoForPath:[self.photoPaths objectAtIndex:index] completion:^(NSImage *photo, NSError *error) {
+        CGImageRef imageRef = ((NSImage *)photo).tui_CGImage;        
+        itemView.layer.contents = (__bridge id)imageRef;
+    }];
+        
     return itemView;
 }
-
-
-#pragma mark - TUIScrollViewDelegate methods
-
-
 
 @end
 

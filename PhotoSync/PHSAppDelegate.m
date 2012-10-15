@@ -13,6 +13,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     self.menuController = [[PHSMenuController alloc] init];
+    
+    NSAppleEventManager *em = [NSAppleEventManager sharedAppleEventManager];
+    [em setEventHandler:self andSelector:@selector(getUrl:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
 }
 
 - (void)applicationWillBecomeActive:(NSNotification *)notification
@@ -22,7 +25,7 @@
 
 - (void)applicationWillResignActive:(NSNotification *)aNotification
 {
-    [self.menuController.panelController closePanel:nil];
+//    [self.menuController.panelController closePanel:nil];
 }
 
 
@@ -30,6 +33,16 @@
 {
     self.menuController = nil;
     return NSTerminateNow;
+}
+
+
+#pragma mark - URL Support
+
+- (void)getUrl:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+    // This gets called when the user clicks Show "App name". You don't need to do anything for Dropbox here
+    
+    [self.menuController.panelController openPanel:nil];
+
 }
 
 @end

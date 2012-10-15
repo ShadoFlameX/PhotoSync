@@ -22,6 +22,7 @@
 @property (nonatomic) CGSize itemSize;
 
 //- (TUIView *)indexForItem:(TUIView *)itemView;
+- (TUIView *)itemAtIndex:(NSUInteger)index;
 - (void)reloadData;
 
 @end

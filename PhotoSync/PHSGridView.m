@@ -96,15 +96,25 @@ static CGFloat const PHSGridViewMinimumPadding = 3.0f;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    if (_needsReloadData) [self reloadData];
+    [self reloadData:NO];
 }
 
 
 #pragma mark - Content
 
+- (TUIView *)itemAtIndex:(NSUInteger)index
+{
+    return [self.items objectAtIndex:index];
+}
+
 - (void)reloadData
 {
-    if (!_needsReloadData) return;
+    [self reloadData:YES];
+}
+
+- (void)reloadData:(BOOL)forced
+{
+    if ( !forced && !_needsReloadData) return;
     
     NSUInteger rowCount = self.rowCount;
     
@@ -140,10 +150,6 @@ static CGFloat const PHSGridViewMinimumPadding = 3.0f;
     for (int i=0; i<itemCount; i++) {
         NSUInteger column = i % itemsPerRow;
         NSUInteger row = i / itemsPerRow;
-        
-//        // y-axis is flipped
-//        NSUInteger row = (itemCount - 1) - (i / itemsPerRow);
-
         
         CGFloat originX = (self.contentInset.left + (self.itemSize.width + itemPaddingX) * column);
         originX = round(originX);

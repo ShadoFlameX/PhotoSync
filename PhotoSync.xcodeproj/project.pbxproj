@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0D104D0215F7495700B67EDA /* PHSPhotoScrubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */; };
+		0D1E0F521622B5CB007DB9C4 /* PHSPhotoStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E0F511622B5CB007DB9C4 /* PHSPhotoStorageManager.m */; };
+		0D1E0F7F1622BE2B007DB9C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1E0F7E1622BE2B007DB9C4 /* Security.framework */; };
 		0D26691A15F9D77B00586D4F /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D26691915F9D77B00586D4F /* ApplicationServices.framework */; };
 		0D26691D15F9D78200586D4F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D26691C15F9D78200586D4F /* QuartzCore.framework */; };
 		0D3F195C15E8885F008FFA0A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3F195B15E8885F008FFA0A /* icon.png */; };
 		0D4FC3AD15FC466800D033AE /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4FC3AC15FC466800D033AE /* TwUI.framework */; };
-		0D4FC3AE15FC466F00D033AE /* TwUI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0D4FC3AC15FC466800D033AE /* TwUI.framework */; };
+		0D4FC3AE15FC466F00D033AE /* TwUI.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 0D4FC3AC15FC466800D033AE /* TwUI.framework */; };
 		0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D652D6915DE128D00BF7718 /* Cocoa.framework */; };
 		0D652D7415DE128D00BF7718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D652D7215DE128D00BF7718 /* InfoPlist.strings */; };
 		0D652D7615DE128D00BF7718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D652D7515DE128D00BF7718 /* main.m */; };
@@ -31,6 +33,9 @@
 		0D8D337A15E210CA00B2ED62 /* PHSPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8D337915E210CA00B2ED62 /* PHSPanelController.m */; };
 		0D96DF141619716E00E3BA48 /* PHSGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96DF131619716E00E3BA48 /* PHSGridView.m */; };
 		0DAF644D161AC9EE00A22AC0 /* PHSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF644C161AC9EE00A22AC0 /* PHSNavigationBar.m */; };
+		0DCAAE71161C0D670029E7A9 /* PHSPersonPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCAAE70161C0D670029E7A9 /* PHSPersonPopover.m */; };
+		0DD7AA0D162BB7A20003FC4A /* DropboxOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD7AA0C162BB7A20003FC4A /* DropboxOSX.framework */; };
+		0DD7AA0E162BB7DB0003FC4A /* DropboxOSX.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 0DD7AA0C162BB7A20003FC4A /* DropboxOSX.framework */; };
 		0DDEF0D315F8932400B2040F /* PHSPopoverWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */; };
 		0DDEF0D915F8A4B200B2040F /* scrubber-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DDEF0D815F8A4B200B2040F /* scrubber-background.png */; };
 		0DDEF0DC15F8A7FD00B2040F /* PHSPhotoQuickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDEF0DB15F8A7FD00B2040F /* PHSPhotoQuickView.m */; };
@@ -43,14 +48,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0D4FC3A915FC464C00D033AE /* CopyFiles */ = {
+		0D4FC3A915FC464C00D033AE /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0D4FC3AE15FC466F00D033AE /* TwUI.framework in CopyFiles */,
+				0D4FC3AE15FC466F00D033AE /* TwUI.framework in Copy Files */,
+				0DD7AA0E162BB7DB0003FC4A /* DropboxOSX.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -58,6 +65,9 @@
 /* Begin PBXFileReference section */
 		0D104D0015F7495700B67EDA /* PHSPhotoScrubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPhotoScrubber.h; sourceTree = "<group>"; };
 		0D104D0115F7495700B67EDA /* PHSPhotoScrubber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPhotoScrubber.m; sourceTree = "<group>"; };
+		0D1E0F501622B5CB007DB9C4 /* PHSPhotoStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPhotoStorageManager.h; sourceTree = "<group>"; };
+		0D1E0F511622B5CB007DB9C4 /* PHSPhotoStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPhotoStorageManager.m; sourceTree = "<group>"; };
+		0D1E0F7E1622BE2B007DB9C4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0D26691915F9D77B00586D4F /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		0D26691C15F9D78200586D4F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0D3F195B15E8885F008FFA0A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = "<group>"; };
@@ -92,6 +102,9 @@
 		0D96DF131619716E00E3BA48 /* PHSGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSGridView.m; sourceTree = "<group>"; };
 		0DAF644B161AC9EE00A22AC0 /* PHSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSNavigationBar.h; sourceTree = "<group>"; };
 		0DAF644C161AC9EE00A22AC0 /* PHSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSNavigationBar.m; sourceTree = "<group>"; };
+		0DCAAE6F161C0D670029E7A9 /* PHSPersonPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPersonPopover.h; sourceTree = "<group>"; };
+		0DCAAE70161C0D670029E7A9 /* PHSPersonPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPersonPopover.m; sourceTree = "<group>"; };
+		0DD7AA0C162BB7A20003FC4A /* DropboxOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxOSX.framework; path = Frameworks/DropboxOSX.framework; sourceTree = "<group>"; };
 		0DDEF0D115F8932400B2040F /* PHSPopoverWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSPopoverWindow.h; sourceTree = "<group>"; };
 		0DDEF0D215F8932400B2040F /* PHSPopoverWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSPopoverWindow.m; sourceTree = "<group>"; };
 		0DDEF0D815F8A4B200B2040F /* scrubber-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scrubber-background.png"; path = "Images/scrubber-background.png"; sourceTree = "<group>"; };
@@ -110,16 +123,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1E0F7F1622BE2B007DB9C4 /* Security.framework in Frameworks */,
 				0D4FC3AD15FC466800D033AE /* TwUI.framework in Frameworks */,
 				0D26691D15F9D78200586D4F /* QuartzCore.framework in Frameworks */,
 				0D26691A15F9D77B00586D4F /* ApplicationServices.framework in Frameworks */,
 				0D652D6A15DE128D00BF7718 /* Cocoa.framework in Frameworks */,
+				0DD7AA0D162BB7A20003FC4A /* DropboxOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1E0F4E1622B367007DB9C4 /* Photo Storage */ = {
+			isa = PBXGroup;
+			children = (
+				0D1E0F501622B5CB007DB9C4 /* PHSPhotoStorageManager.h */,
+				0D1E0F511622B5CB007DB9C4 /* PHSPhotoStorageManager.m */,
+			);
+			name = "Photo Storage";
+			sourceTree = "<group>";
+		};
 		0D3F195915E8883D008FFA0A /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +186,8 @@
 		0D652D6815DE128D00BF7718 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DD7AA0C162BB7A20003FC4A /* DropboxOSX.framework */,
+				0D1E0F7E1622BE2B007DB9C4 /* Security.framework */,
 				0D4FC3AC15FC466800D033AE /* TwUI.framework */,
 				0D26691C15F9D78200586D4F /* QuartzCore.framework */,
 				0D26691915F9D77B00586D4F /* ApplicationServices.framework */,
@@ -184,6 +210,7 @@
 		0D652D6F15DE128D00BF7718 /* PhotoSync */ = {
 			isa = PBXGroup;
 			children = (
+				0D1E0F4E1622B367007DB9C4 /* Photo Storage */,
 				0D76370E15DF876300412555 /* Controllers */,
 				0D76370C15DF875D00412555 /* Views */,
 				0D652D7B15DE128D00BF7718 /* PHSAppDelegate.h */,
@@ -233,6 +260,8 @@
 				0D76371315DF88E500412555 /* PHSMenuController.m */,
 				0D8D337815E210CA00B2ED62 /* PHSPanelController.h */,
 				0D8D337915E210CA00B2ED62 /* PHSPanelController.m */,
+				0DCAAE6F161C0D670029E7A9 /* PHSPersonPopover.h */,
+				0DCAAE70161C0D670029E7A9 /* PHSPersonPopover.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -247,7 +276,7 @@
 				0D652D6115DE128D00BF7718 /* Sources */,
 				0D652D6215DE128D00BF7718 /* Frameworks */,
 				0D652D6315DE128D00BF7718 /* Resources */,
-				0D4FC3A915FC464C00D033AE /* CopyFiles */,
+				0D4FC3A915FC464C00D033AE /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -328,6 +357,8 @@
 				0DDEF0DC15F8A7FD00B2040F /* PHSPhotoQuickView.m in Sources */,
 				0D96DF141619716E00E3BA48 /* PHSGridView.m in Sources */,
 				0DAF644D161AC9EE00A22AC0 /* PHSNavigationBar.m in Sources */,
+				0DCAAE71161C0D670029E7A9 /* PHSPersonPopover.m in Sources */,
+				0D1E0F521622B5CB007DB9C4 /* PHSPhotoStorageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +448,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Library/Developer/Xcode/DerivedData/PhotoSync-glnckevtiwmpyrcuaocixtfhzlph/Build/Products/Debug\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoSync/PhotoSync-Prefix.pch";
@@ -433,6 +466,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Library/Developer/Xcode/DerivedData/PhotoSync-glnckevtiwmpyrcuaocixtfhzlph/Build/Products/Debug\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoSync/PhotoSync-Prefix.pch";
